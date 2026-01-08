@@ -85,7 +85,10 @@ while True:
             gameover = 2
         button = []
         while key.kbhit():
-            button += [key.getch().decode("ASCII").lower()]
+            try:
+                button += [key.getch().decode("ASCII").lower()]
+            except:
+                pass
         for a in button:
             match a:
                 case 'a':
